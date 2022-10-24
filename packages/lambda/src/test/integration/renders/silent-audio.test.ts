@@ -61,8 +61,6 @@ test('Should add silent audio if there is no audio', async () => {
 			webhook: null,
 			audioBitrate: null,
 			videoBitrate: null,
-			height: undefined,
-			width: undefined,
 		},
 		extraContext
 	);

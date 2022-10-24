@@ -243,9 +243,6 @@ export const getCliOptions = async (options: {
 
 	const concurrency = ConfigInternals.getConcurrency();
 
-	const height = ConfigInternals.getHeight();
-	const width = ConfigInternals.getWidth();
-
 	RenderInternals.validateConcurrency(concurrency, 'concurrency');
 
 	return {
@@ -277,8 +274,8 @@ export const getCliOptions = async (options: {
 		publicDir: ConfigInternals.getPublicDir(),
 		ffmpegOverride: ConfigInternals.getFfmpegOverrideFunction(),
 		audioBitrate: ConfigInternals.getAudioBitrate(),
-		height,
-		width,
+		height: ConfigInternals.getHeight(),
+		width: ConfigInternals.getWidth(),
 		videoBitrate,
 	};
 };
