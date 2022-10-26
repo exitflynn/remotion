@@ -29,6 +29,8 @@ type LambdaCommandLineOptions = {
 	privacy: Privacy;
 	webhook: string | undefined;
 	['webhook-secret']: string | undefined;
+	['height']: number;
+	['width']: number;
 };
 
 export const parsedLambdaCli = CliInternals.minimist<LambdaCommandLineOptions>(
