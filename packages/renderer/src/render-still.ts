@@ -48,6 +48,8 @@ type InnerStillOptions = {
 	cancelSignal?: CancelSignal;
 	ffmpegExecutable?: FfmpegExecutable;
 	ffprobeExecutable?: FfmpegExecutable;
+	height: number,
+	width: number,
 	/**
 	 * @deprecated Only for Remotion internal usage
 	 */
@@ -78,11 +80,15 @@ const innerRenderStill = async ({
 	scale,
 	proxyPort,
 	cancelSignal,
+	height,
+	width,
 }: InnerStillOptions & {
 	serveUrl: string;
 	onError: (err: Error) => void;
 	proxyPort: number;
 }): Promise<void> => {
+	composition.height = 696;
+	composition.width = 969;
 	Internals.validateDimension(
 		composition.height,
 		'height',
